@@ -3,8 +3,8 @@
 # don't add or remove any function
 # usage
 var settings = new Settings() #where you like
-  //var resolution{width , height} , codec , wifiOnly , bandwidth , notification , volume ;
-  //var mServer , stunServer , turnUsername , turnCredential , turnServer1 , turnServer2 ;
+  // resolution{width , height} , codec , wifiOnly , bandwidth , notification , volume ;
+  // mServer , stunServer , turnUsername , turnCredential , turnServer1 , turnServer2 ;
 # example 
 settings.volume
 settings.resolution.width
