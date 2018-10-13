@@ -1,0 +1,245 @@
+<!doctype>
+<html>
+<head>
+  <script type="text/javascript" src="settings1.js"></script>
+</head>
+<body>
+
+  <ons-page id="settings.html">
+
+    <ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
+      <ons-page>
+        <ons-splitter id="appSplitter">
+          <ons-splitter-side id="sidemenu" page="sidemenu.html" swipeable side="right" collapse="" width="260px"></ons-splitter-side>
+          <ons-splitter-content page="tabbar.html"></ons-splitter-content>
+        </ons-splitter>
+      </ons-page>
+    </ons-navigator>
+
+
+    <template id="tabbar.html">
+      <ons-page id="tabbar-page">
+        <ons-tabbar swipeable id="appTabbar" position="auto">
+          <ons-tab icon="fa-desktop" page="VideoSetting.html"></ons-tab>
+          <ons-tab icon="fa-phone-volume" page="phonSetting.html"></ons-tab>
+          <ons-tab icon="fa-server" page="serverSetting.html"></ons-tab>
+        </ons-tabbar>
+      </ons-page>
+    </template>
+
+
+    <template id="VideoSetting.html">
+      <ons-page id="settings-page">
+        <ons-list>
+
+          <ons-list-header>Video Resolution</ons-list-header>
+          <ons-list-item>
+            <div class="center">
+              <ons-select id="resolution" style="width: 60%">
+                <option value="320 240">
+                  Low (320 x 240)
+                </option>
+                <option value="640 480">
+                  Medium (640 x 480)
+                </option>
+                <option value="1024 768">
+                  High (1024 x 768)
+                </option>
+                <option value="1280 720">
+                  very High (1280 x 720)
+                </option>
+                <option value="1920 1080">
+                  HD (1920 x 1080)
+                </option>
+              </ons-select>
+            </div>
+          </ons-list-item>
+
+
+          <ons-list-header>Video Codecs</ons-list-header>
+          <ons-list-item>
+            <div class="center">
+              <ons-select id="codec" style="width: 60%">
+                <option value="vp8">
+                  vp8
+                </option>
+                <option value="vp9">
+                  vp9
+                </option>
+                <option value="h264">
+                  h264
+                </option>
+              </ons-select>
+            </div>
+          </ons-list-item>
+
+
+          <ons-list-header>Data usage</ons-list-header>
+          <ons-list-item>
+            <label class="center" for="switch1">
+              WiFi-only
+            </label>
+            <div class="right">
+              <ons-switch id="wifiOnly" input-id="switch1" checked="true"></ons-switch>
+            </div>
+          </ons-list-item>
+
+          <ons-list-header>Bandwidth</ons-list-header>
+          <ons-list-item>
+            <div class="center">
+              <ons-select id="bandwidth" style="width: 40%">
+                <option value="300">
+                  Low (300 Kbits/s)
+                </option>
+                <option value="500">
+                  Medium (500 Kbits/s)
+                </option>
+                <option value="1000">
+                  High (1000 Kbits/s)
+                </option>
+                <option value="2000">
+                  Very High (2000 Kbits/s)
+                </option>
+              </ons-select>
+            </div>
+          </ons-list-item>
+
+
+        </ons-list>
+      </ons-page>
+    </template>
+
+
+    <template id="phonSetting.html">
+      <ons-page id="settings-page">
+        <ons-list>
+
+
+          <ons-list-header>Notifications</ons-list-header>
+          <ons-list-item>
+            <label class="center" for="notif">
+              Enable Notificatoin
+            </label>
+            <div class="right">
+              <ons-switch id="notification" input-id="notif" checked="true"></ons-switch>
+            </div>
+          </ons-list-item>
+
+
+          <ons-list-header>Default Call Voulume</ons-list-header>
+          <ons-list-item>
+            <ons-row>
+              <ons-col width="40px" style="text-align: center; line-height: 31px;">
+                <ons-icon icon="md-volume-down"></ons-icon>
+              </ons-col>
+              <ons-col>
+                <ons-range id="volume" value="50" style="width: 80%;" ></ons-range>
+              </ons-col>
+              <ons-col width="40px" style="text-align: center; line-height: 31px;">
+                <ons-icon icon="md-volume-up"></ons-icon>
+              </ons-col>
+            </ons-row>
+            Volume :<span id="volume-value">&nbsp;50</span> <span id="careful-message" style="display: none">&nbsp;(careful, that's loud)</span>
+          </ons-list-item>
+
+
+          <ons-list-header>Ringtone Timer</ons-list-header>
+          <ons-list-item>
+            <label class="center" for="switch1">
+              Limit Ringtone Time
+            </label>
+            <div class="right">
+              <ons-switch id="Timer-switch" input-id="switch1" ></ons-switch>
+            </div>
+          </ons-list-item>
+          <ons-list-item id="timer" class="input-items" style="display: none;">
+            <label class="center">
+              <ons-input id="time-input" placeholder="Time (Minutes)" ></ons-input>
+            </label>
+          </ons-list-item>
+
+
+          <ons-list-header>Rington</ons-list-header>
+          <ons-list-item>
+            <div class="center">
+              <ons-select id="rington-input" style="width: 50%">
+                <option value="1">
+                  Good Leg
+                </option>
+                <option value="2">
+                  Don't Sail
+                </option>
+                <option value="3">
+                  Leg Boogie
+                </option>
+              </ons-select>
+            </div>
+          </ons-list-item>
+
+
+        </ons-list>
+      </ons-page>
+    </template>
+
+
+    <template id="serverSetting.html">
+      <ons-page id="settings-page">
+        <ons-list>
+
+          <ons-list-header>accessToken</ons-list-header>
+          <ons-list-item class="accessToken">
+            <label class="center" style="font-size:13px">
+              65sq465d4qs65d465qs4d654sq65d4654s6qsdz2apx
+            </label>
+          </ons-list-item>
+
+
+          <ons-list-header>Main Server</ons-list-header>
+          <ons-list-item class="input-items">
+            <label class="center">
+              <ons-input id="mServer" placeholder="Socket URL " value="https://rgridserve2.herokuapp.com/" style="width: 75%"></ons-input>
+            </label>
+          </ons-list-item>
+
+          <ons-list-header>Stun Server</ons-list-header>
+          <ons-list-item class="input-items">
+            <label class="center">
+              <ons-input id="stunServer" placeholder="stun:stun.l.google.com:19302"  value="stun:stun.l.google.com:19302" style="width: 75%" ></ons-input>
+            </label>
+          </ons-list-item>
+
+
+          <ons-list-header>Turn Servers</ons-list-header>
+          <ons-list-item class="input-items">
+            <label class="center">
+              <ons-input id="turnUsername" placeholder="username"  value="muazkh" style="width: 75%"></ons-input>
+            </label>
+          </ons-list-item>
+
+          <ons-list-item class="input-items">
+            <label class="center">
+              <ons-input id="turnCredential" placeholder="your credential" style="width: 75%" value="muazkh" ></ons-input>
+            </label>
+          </ons-list-item>
+
+
+
+          <ons-list-item class="input-items">
+            <label class="center">
+              <ons-input id="turnServer1" placeholder="turn:webrtcweb.com:7788" style="width: 75%" value="turn:webrtcweb.com:7788" ></ons-input>
+            </label>
+          </ons-list-item>
+          <ons-list-item class="input-items">
+            <label class="center">
+              <ons-input id="turnServer2" placeholder="turn:webrtcweb.com:4455" style="width: 75%" value="turn:webrtcweb.com:4455" ></ons-input>
+            </label>
+          </ons-list-item>
+
+        </ons-list>
+      </ons-page>
+    </template>
+
+  </ons-page>
+
+</body>
+</html>
